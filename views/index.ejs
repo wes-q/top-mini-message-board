@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <p>Welcome to <%= title %></p>
+        <ul>
+            <% messages.map(message => { %>
+            <p><strong><%= message.user %></strong></p>
+            <p><em>(<%= message.added %>)</em></p>
+            <p><%= message.text %></p>
+            <% }); %>
+        </ul>
+        <a href="/new"><button class="add-message-button">Add Message</button></a>
+    </body>
 </html>
